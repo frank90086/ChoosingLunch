@@ -1,0 +1,33 @@
+{
+  "Serilog": {
+    "Using": [
+      "Serilog.Sinks.RollingFile",
+      "Serilog.Sinks.Slack"
+    ],
+    "MinimumLevel": "Debug",
+    "WriteTo": [
+      {
+          "Name": "Slack",
+          "Args": {
+              "WebHookUrl": "https://hooks.slack.com/services/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",
+              "restrictedToMinimumLevel": "Error"
+          }
+      },
+      {
+        "Name": "RollingFile",
+        "Args": {
+          "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+          "pathFormat": "D:\\home\\LogFiles\\http\\RawLogs\\log-{Date}.log"
+        }
+      }
+    ],
+    "Enrich": [
+      "FromLogContext",
+      "WithMachineName",
+      "WithThreadId"
+    ]
+  },
+  "AppSetting": {
+      "AppName": "ChoosingBot.App"
+  }
+}
