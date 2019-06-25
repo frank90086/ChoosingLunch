@@ -45,8 +45,12 @@ namespace ChoosingBot.Models
     {
         public string type { get; set; }
         public string thumbnailImageUrl { get; set; }
+        public string imageAspectRatio { get; set; }
+        public string imageSize { get; set; }
+        public string imageBackgroundColor { get; set; }
         public string title { get; set; }
         public string text { get; set; }
+        public ActionModel defaultAction { get; set; }
         public List<ActionModel> actions { get; set; }
         public List<ColumnsModel> columns { get; set; }
     }

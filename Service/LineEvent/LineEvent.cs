@@ -12,6 +12,6 @@ namespace ChoosingBot.Service
         {
             _context = context;
         }
-        public abstract void Do(string[] message, ref List<MessageModel> replyMessages);
+        public abstract void Do(EventModel model, ref List<MessageModel> replyMessages);
     }
 }

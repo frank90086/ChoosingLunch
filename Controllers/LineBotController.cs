@@ -37,10 +37,8 @@ namespace ChoosingBot.Controllers
             EventModel receiveEvent = content.events?.FirstOrDefault();
             string replyToken = receiveEvent.replyToken;
 
-            string[] message = receiveEvent.message.text.Split(' ');
-
             var lineEvent = ReflectionObject.GenericReflectionWithParm<LineEvent>($"{receiveEvent.type.FirstCharToUpper()}LineEvent", new object[]{_context});
-            lineEvent.Do(message, ref replyMessages);
+            lineEvent.Do(receiveEvent, ref replyMessages);
 
             await ResponseLine(replyToken, replyMessages);
         }
