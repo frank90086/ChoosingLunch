@@ -38,7 +38,8 @@ namespace ChoosingBot.Controllers
             string replyToken = receiveEvent.replyToken;
 
             var lineEvent = ReflectionObject.GenericReflectionWithParm<LineEvent>($"{receiveEvent.type.FirstCharToUpper()}LineEvent", new object[]{_context});
-            lineEvent.Do(receiveEvent, ref replyMessages);
+            if (lineEvent != null)
+                lineEvent.Do(receiveEvent, ref replyMessages);
 
             await ResponseLine(replyToken, replyMessages);
         }

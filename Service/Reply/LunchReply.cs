@@ -23,8 +23,8 @@ namespace ChoosingBot.Service
             string final;
             int day = message.Count() > 1 ? int.Parse(message[1]) : 0;
             WeekDay weekDay = day > 0 ?
-                (WeekDay)Enum.Parse(typeof(WeekDay), DateTime.Now.DayOfWeek.ToString()) :
-                (WeekDay)Enum.Parse(typeof(WeekDay), day.ToString());
+                (WeekDay)Enum.Parse(typeof(WeekDay), day.ToString()) :
+                (WeekDay)Enum.Parse(typeof(WeekDay), DateTime.Now.DayOfWeek.ToString());
             using (_context)
             {
                 try

@@ -15,7 +15,7 @@ namespace ChoosingBot.Extensions
             }
             catch (Exception e)
             {
-                throw e;
+                return null;
             }
         }
 
@@ -30,7 +30,7 @@ namespace ChoosingBot.Extensions
             }
             catch (Exception e)
             {
-                throw e;
+                return null;
             }
         }
     }

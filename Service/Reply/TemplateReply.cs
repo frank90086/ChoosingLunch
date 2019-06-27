@@ -24,7 +24,7 @@ namespace ChoosingBot.Service
             return new TemplateModel()
             {
                 type = "buttons",
-                thumbnailImageUrl = "https://ppt.cc/f8P9fx",
+                thumbnailImageUrl = "https://ppt.cc/fQ6vex",
                 imageAspectRatio = "rectangle",
                 imageSize = "cover",
                 imageBackgroundColor = "#FFFFFF",

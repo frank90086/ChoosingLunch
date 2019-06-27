@@ -25,11 +25,12 @@ namespace ChoosingBot.Service
             {
                 try
                 {
-                    WeekDay weekDay = (Enums.WeekDay)Enum.Parse(typeof(Enums.WeekDay), DateTime.Now.DayOfWeek.ToString());
+                    WeekDay weekDay = (WeekDay)Enum.Parse(typeof(WeekDay), DateTime.Now.DayOfWeek.ToString());
 
                     EatedList Eated = _context.EatedLists.FirstOrDefault(x => x.WeekDay == weekDay);
                     final = GetRestaurantName();
-                    _context.EatedLists.Remove(Eated);
+                    if (Eated != null)
+                        _context.EatedLists.Remove(Eated);
                     _context.EatedLists.Add(new EatedList() { WeekDay = weekDay, Restaurant = final });
                     _context.SaveChanges();
                     return final;
